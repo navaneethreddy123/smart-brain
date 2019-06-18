@@ -77,9 +77,9 @@ class App extends Component {
     this.setState({imageUrl: this.state.input});
       fetch('https://lit-ravine-11332.herokuapp.com/imageurl', {
         method: 'post',
-        headers: {'Content-type': 'application/json'},
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-          input: this.state.user.input
+          input: this.state.input
         })
       })
       .then(response => response.json())
@@ -87,7 +87,7 @@ class App extends Component {
         if (response) {
           fetch('https://lit-ravine-11332.herokuapp.com/image', {
             method: 'put',
-            headers: {'Content-type': 'application/json'},
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
               id: this.state.user.id
             })
